@@ -48,7 +48,7 @@ public class Detective {
 		System.out.println("犯人は...");
 
 		// ここにif～else文を入れる
-		if (height >= 185) {
+		if (height > 185) {
 			System.out.println("\n背の高い人ですね。");
 		} else {
 			System.out.println("\n背の低い人ですね。");

@@ -47,8 +47,8 @@ public class Detective {
 		int inputHeight = Integer.parseInt(height);
 
 		//ここにif～else文を入れる
-		// 入力された身長が185以上の場合
-		if (inputHeight >= 185) {
+		// 入力された身長が185を超える場合
+		if (inputHeight > 185) {
 			System.out.println("その身長だと犯行が可能ですね。");
 		} else { // 入力された身長が185未満の場合
 			System.out.println("その身長だと犯行は無理ですね。");
