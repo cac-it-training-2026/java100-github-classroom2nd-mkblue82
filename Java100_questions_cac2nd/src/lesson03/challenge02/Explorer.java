@@ -57,13 +57,26 @@ public class Explorer {
 		System.out.println("隊長：");
 		System.out.println("サバ缶を50個以上袋に詰めてください。\n");
 
+		// BufferedReaderクラスをインスタンス化
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		// 必要な缶
 		int targetCans = 50;
+		// 入力された缶の個数
 		int inputCans = 0;
 
-
 		//ここにfor文を利用した処理を記述
-
+		// 3回繰り返す
+		for (int i = 3; i > 0; i--) {
+			System.out.println("\n隊長：");
+			System.out.println("あと" + i + "回！\n");
+			System.out.print("袋に何個入れますか？＞");
+			// 入力処理
+			String count = br.readLine();
+			// int型に変換
+			int inputCount = Integer.parseInt(count);
+			// 入力した缶の数を加算代入する
+			inputCans += inputCount;
+		}
 
 		if (inputCans >= targetCans) {
 			System.out.println("\n隊長：");

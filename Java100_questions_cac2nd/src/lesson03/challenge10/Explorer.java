@@ -15,7 +15,7 @@
  *
  * <参考>
  * 時刻の出力には書式付き出力printfを用いる
- * 例：System.out.printf("%d:%02d 待ち遠しいな～%n%n",i,j);
+ * 例：System.out.printf("%d:%02d 待ち遠しいな～%n%n",i,j); iが時間,jが分
  *
  *
  * <実行例>
@@ -75,14 +75,45 @@ package lesson03.challenge10;
 
 public class Explorer {
 
-        public static void main(String[] args) {
+	public static void main(String[] args) {
 
-                System.out.println("隊長：");
-                System.out.println("滝の前に着いたよ！\n");
+		System.out.println("隊長：");
+		System.out.println("滝の前に着いたよ！\n");
 
+		//ここにfor文のネスト、if文を利用した処理を記述する。
+		for (int i = 13; i < 17; i++) {
+			for (int j = 15; j < 60; j += 15) {
 
-                //ここにfor文のネスト、if文を利用した処理を記述する。
+				if (i == 16 && j == 30) {
+					System.out.println("隊長：");
+					System.out.printf("%d:%02d 時間になったよ%n%n", i, j);
+					break;
+				} else if (i == 13) {
+					if (j == 15) {
+						System.out.println("隊長：");
+						System.out.printf("%d:%02d 待ち遠しいな～%n%n", i, 30);
+					} else if (j == 30) {
+						continue;
+					} else {
+						System.out.println("隊長：");
+						System.out.printf("%d:%02d 待ち遠しいな～%n%n", i, j);
+					}
+				} else {
+					System.out.println("隊長：");
+					System.out.printf("%d:%02d 待ち遠しいな～%n%n", i, j);
+				}
+			}
 
+			if (i == 16) {
+				break;
+			}
 
-        }
+			System.out.println("隊長：");
+			System.out.printf("%d:%02d 待ち遠しいな～%n%n", i + 1, 00);
+		}
+
+		System.out.println("滝の水流が弱くなりました。\n");
+		System.out.println("やったー！宝物だー！");
+
+	}
 }
