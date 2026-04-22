@@ -135,15 +135,15 @@ public class WarehouseManager {
 	public static void main(String[] args) throws IOException {
 
 		String[] handArray = { "グー", "チョキ", "パー" };
-		int winPoint = 0;
-		int losePoint = 0;
-		int drawPoint = 0;
-		int stoneCount1 = 0;
-		int stoneCount2 = 0;
-		int scissorsCount1 = 0;
-		int scissorsCount2 = 0;
-		int paperCount1 = 0;
-		int paperCount2 = 0;
+		int winPoint = 0; // 勝ち
+		int losePoint = 0; // 負け
+		int drawPoint = 0; // 引き分け
+		int stoneCount1 = 0; // グーの数
+		int stoneCount2 = 0; // グーの数2
+		int scissorsCount1 = 0; // チョキの数
+		int scissorsCount2 = 0; // チョキの数2
+		int paperCount1 = 0; // グーの数
+		int paperCount2 = 0; // グーの数2
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -152,12 +152,33 @@ public class WarehouseManager {
 		int[] jankenArray1 = new int[5];
 		int[] jankenArray2 = new int[5];
 
-
 		//Yさんのコンテナにじゃんけんの手を入れる処理を記述する。
+		for (int i = 0; i < jankenArray1.length; i++) {
+			System.out.println("コンテナ" + (i + 1) + "に入れるブロックを選択してください（1.グー、2.チョキ、3.パー）＞");
+			int choiceHand = Integer.parseInt(br.readLine());
 
+			// グーチョキパー以外の数値が入力された場合
+			if (choiceHand > 3 || choiceHand < 1) {
+				System.out.println("Yさん：");
+				System.out.println("え～。そんな手ないよ");
+				i--;
+				continue;
+			}
+
+			switch (choiceHand) {
+			case (1):
+				stoneCount1++;
+				break;
+			case (2):
+				scissorsCount1++;
+				break;
+			case (3):
+				paperCount1++;
+				break;
+			}
+		}
 
 		//Sさんのコンテナにじゃんけんの手を入れる処理を記述する。（ランダム）
-
 
 		for (int count = 0; count < 5; count++) {
 
@@ -169,15 +190,11 @@ public class WarehouseManager {
 
 			int openNum1 = 0;
 
-
 			//Yさんのどのコンテナをオープンするか入力してもらう処理を記述する。
-
 
 			int openNum2 = 0;
 
-
 			//Sさんのどのコンテナをオープンするか決定する処理を記述する。（ランダム）
-
 
 			System.out.println("\nYさん：");
 			System.out.println("よし、" + (openNum1 + 1) + "番コンテナだ！\n");
@@ -194,9 +211,7 @@ public class WarehouseManager {
 			System.out.println("Sさん：" + handArray[jankenArray2[openNum2] - 1]);
 			System.out.print("で、");
 
-
 			//1回ごとの勝敗判定およびメッセージの出力処理を記述する。
-
 
 		}
 
