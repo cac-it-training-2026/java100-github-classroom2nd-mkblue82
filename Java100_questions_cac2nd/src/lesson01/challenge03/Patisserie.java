@@ -22,5 +22,20 @@
 package lesson01.challenge03;
 
 public class Patisserie {
+	public static void main(String[] args) {
 
+		// int型変数citronStockを30で初期化
+		int citronStock = 30;
+		// int型変数chocolatStockを30で初期化
+		int chocolatStock = 30;
+		// int型変数pistachioStockを30で初期化
+		int pistachioStock = 30;
+
+		// 出力処理
+		System.out.println("本日のおすすめ商品です。");
+		System.out.println("\n");
+		System.out.println("シトロン　　　\\250　・・・　残り" + citronStock + "個");
+		System.out.println("ショコラ　　　\\280　・・・　残り" + chocolatStock + "個");
+		System.out.println("ピスターシュ　\\320　・・・　残り" + pistachioStock + "個");
+	}
 }

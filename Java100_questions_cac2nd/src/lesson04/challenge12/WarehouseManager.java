@@ -65,6 +65,7 @@ public class WarehouseManager {
 		int insertNum = 0;
 		int insertIndex = 0;
 		boolean loopFlag;
+
 		do {
 			loopFlag = false;
 			insertNum = (int) (Math.random() * 10) % 5 + 1;
@@ -99,9 +100,26 @@ public class WarehouseManager {
 
 		System.out.println("\n\nでした。直してきます...\n");
 
-
 		//ここに適切な値の挿入処理を記述する
+		boolean[] exists = new boolean[6];
 
+		for (int num : wonderfulArray) {
+			if (num >= 1 && num <= 5) {
+				exists[num] = true;
+			}
+		}
+
+		for (int i = 0; i < wonderfulArray.length; i++) {
+			if (wonderfulArray[i] == 0) {
+				for (int j = 1; j <= 5; j++) {
+					if (!exists[j]) {
+						wonderfulArray[i] = j;
+						exists[j] = true;
+						break;
+					}
+				}
+			}
+		}
 
 		System.out.println("Yさん：");
 		System.out.println("直してきました。\n");
