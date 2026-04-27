@@ -1,16 +1,4 @@
-/**
- * 第8章 保育園のお仕事
- *
- * 問題1  ファイルの分割
- *
- * 保育士クラス（Nurse）と
- * 園児クラス（NurserySchoolChild）と
- * 保育園クラス（NurserySchool）を別のファイルに
- * 記述し直してください。
- *
- */
-
-package lesson08.challenge01;
+package lesson08.challenge02.Nuesery;
 
 public class NurserySchool {
 
