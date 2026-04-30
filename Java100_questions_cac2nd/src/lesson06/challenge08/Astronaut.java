@@ -20,49 +20,70 @@
 
 package lesson06.challenge08;
 
+/*
+ * 宇宙船クラス
+ */
 class Spaceship {
-    private int air;
-    private int fuel;
-    private static int number;
+	private int air;
+	private int fuel;
+	/** static変数numberの定義 */
+	private static int number;
 
-    public Spaceship() {
-        System.out.println("新しい宇宙船を作成します。\n");
-        number++;
-    }
+	/** デフォルトコンストラクタの定義 */
+	public Spaceship() {
+		System.out.println("新しい宇宙船を作成します。\n");
+		number++; // numberに＋1して代入
+	}
 
-    public Spaceship(int air, int fuel) {
-        this.air = air;
-        this.fuel = fuel;
-    }
+	/** 引数ありコンストラクタの定義 */
+	public Spaceship(int air, int fuel) {
+		// 引数で渡された変数をフィールドに代入
+		this.air = air;
+		this.fuel = fuel;
+	}
 
-    public int getFuel() {
-        return fuel;
-    }
+	/** fuel(燃料)のゲッター */
+	public int getFuel() {
+		return fuel;
+	}
 
-    public void setFuel(int fuel) {
-        this.fuel = fuel;
-    }
+	/** fuel(燃料)のセッター */
+	public void setFuel(int fuel) {
+		this.fuel = fuel;
+	}
 
-    public int getAir() {
-        return air;
-    }
+	/** air(空気)のゲッター */
+	public int getAir() {
+		return air;
+	}
 
-    public void setAir(int air) {
-        this.air = air;
-    }
+	/** air(空気)のセッター */
+	public void setAir(int air) {
+		this.air = air;
+	}
 
-    //ここに適切な処理を記述する。
+	//ここに適切な処理を記述する。
+	public void count() {
+		// 
+		System.out.println("宇宙船は全部で" + number + "台あります。");
+	}
 
 }
 
+// メインクラス
 public class Astronaut {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        Spaceship spaceship1 = new Spaceship();
-        Spaceship spaceship2 = new Spaceship();
-        Spaceship spaceship3 = new Spaceship();
+		// Spaceshipクラスのインスタンス化x3
+		Spaceship spaceship1 = new Spaceship();
+		Spaceship spaceship2 = new Spaceship();
+		Spaceship spaceship3 = new Spaceship();
 
-        //ここに適切な処理を記述する。
-    }
+		//ここに適切な処理を記述する。
+
+		// count()メソッドの呼び出し
+		// 作成された宇宙船の合計(sum)の出力を行う
+		spaceship1.count();
+	}
 }
