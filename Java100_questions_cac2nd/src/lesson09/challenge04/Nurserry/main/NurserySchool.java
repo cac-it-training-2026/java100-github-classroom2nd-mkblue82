@@ -33,14 +33,20 @@ import lesson09.challenge04.Nurserry.Exception.CriticalConditionException;
 import lesson09.challenge04.Nurserry.logic.Nurse;
 import lesson09.challenge04.Nurserry.logic.NurserySchoolChild;
 
+/**
+ * メイン処理
+ */
+
 public class NurserySchool {
 
 	public static void main(String[] args) throws CriticalConditionException {
 
+		// 保育士クラスのインスタンス化x3
 		Nurse nurse1 = new Nurse("保育太郎");
 		Nurse nurse2 = new Nurse("保育次郎");
 		Nurse nurse3 = new Nurse("保育三郎");
 
+		// 各オブジェクトの名前を取得し出力
 		System.out.println(nurse1.getName() + "が出勤しました。");
 		System.out.println(nurse2.getName() + "が出勤しました。");
 		System.out.println(nurse3.getName() + "が出勤しました。");
